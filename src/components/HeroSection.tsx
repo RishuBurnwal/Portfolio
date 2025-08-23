@@ -11,7 +11,7 @@ const HeroSection = () => {
     "Rishu Kumar❤️",
     "a Developer😒",
     "a Techie😎",
-    "a Student🥲"
+    "a Student🥲",
     "a Cybersecurity Enthusiast😍"
   ];
 
