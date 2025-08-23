@@ -8,9 +8,10 @@ const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(true);
 
   const phrases = [
-    "Rishu Kumar",
-    "a Developer",
-    "a Cybersecurity Enthusiast"
+    "Rishu Kumar❤️",
+    "a Developer😒",
+    "a Techie😎",
+    "a Cybersecurity Enthusiast😍"
   ];
 
   // Typing animation effect
@@ -103,7 +104,7 @@ const HeroSection = () => {
                 className="text-accent-primary hover:bg-accent-primary/10 transition-colors duration-300"
                 onClick={() => {
                   // Placeholder for CV download functionality
-                  window.open('/public/Myresume.pdf', '_blank');
+                  window.open('/Myresume.pdf', '_blank');
                 }}
               >
                 <Download className="mr-2 h-4 w-4" />
