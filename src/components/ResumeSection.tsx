@@ -9,62 +9,74 @@ const ResumeSection = () => {
 
   const experiences = [
     {
-      title: "Senior Software Developer",
-      company: "TechCorp Solutions",
-      location: "New Delhi, India",
-      period: "2022 - Present",
-      type: "Full-time",
-      description: "Led development of secure web applications and implemented cybersecurity best practices across multiple projects.",
+      title: "Trainer/President",
+      company: "CyberHunterClub | Quantum University",
+      location: "Roorkee, Uttarakhand",
+      period: "September 2023 - Present",
+      type: "Leadership Role",
+      description: "Leading CyberHunter, Quantum University's official student-run cybersecurity club, guiding and training 100+ students in cybersecurity practices and ethical hacking.",
       achievements: [
-        "Reduced security vulnerabilities by 80% through implementation of OWASP guidelines",
-        "Mentored junior developers in secure coding practices",
-        "Architected microservices infrastructure serving 100K+ users"
+        "Taught hands-on workshops on Linux, ethical hacking, penetration testing, and cybersecurity tools like Metasploit, Nmap, and Burp Suite",
+        "Organized and oversaw CTF challenges, awareness sessions, and skill-development programs",
+        "Enhanced strong leadership, teamwork, and communication skills through event management and junior mentoring",
+        "Taught students Vulnerability Assessment and Penetration Testing (VAPT) projects and ethical hacking practices"
       ],
-      technologies: ["React", "Node.js", "Python", "AWS", "Docker"]
+      technologies: ["Linux", "Metasploit", "Nmap", "Burp Suite", "VAPT", "CTF", "Ethical Hacking"]
     },
     {
-      title: "Cybersecurity Analyst",
-      company: "SecureNet Inc.",
-      location: "Mumbai, India",
-      period: "2021 - 2022",
-      type: "Full-time",
-      description: "Conducted security assessments and penetration testing for enterprise clients.",
+      title: "Network Security Assessment Intern",
+      company: "Vapco Engineers Pvt. Ltd.",
+      location: "Belapur, Navi Mumbai",
+      period: "July 2024 - August 2024",
+      type: "Internship",
+      description: "Performed comprehensive Network Security Assessment, determined vulnerabilities, evaluated risks, and compiled in-depth security reports for corporate IT infrastructure.",
       achievements: [
-        "Performed 50+ security audits and vulnerability assessments",
-        "Developed automated security testing tools",
-        "Reduced incident response time by 60%"
+        "Attained hands-on experience in corporate IT security practices and enhanced skills in threat analysis and countermeasures",
+        "Worked with the security team to suggest preventive strategies for network defense fortification",
+        "Increased knowledge of professional industry tools and methodologies applied in vulnerability assessments",
+        "Compiled detailed security reports with risk assessments and mitigation strategies"
       ],
-      technologies: ["Python", "Burp Suite", "Nmap", "Wireshark", "Metasploit"]
-    },
-    {
-      title: "Junior Developer",
-      company: "InnovateTech",
-      location: "Bangalore, India",
-      period: "2020 - 2021",
-      type: "Full-time",
-      description: "Developed web applications and gained foundational experience in software development lifecycle.",
-      achievements: [
-        "Built responsive web applications using modern frameworks",
-        "Collaborated with cross-functional teams on agile projects",
-        "Implemented CI/CD pipelines for faster deployment"
-      ],
-      technologies: ["JavaScript", "React", "MongoDB", "Express.js", "Git"]
+      technologies: ["Network Security", "Vulnerability Assessment", "Risk Analysis", "Security Reporting", "Threat Analysis"]
     }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Technology in Computer Science",
+      degree: "B.Tech in Computer Science & Engineering",
       institution: "Quantum University",
-      location: "Roorkee, Uttarakhand, India",
+      location: "Roorkee, Uttarakhand",
       period: "2022 - 2026",
-      grade: "7.5/10",
+      grade: "CGPA: 7.25/10",
       highlights: [
-        "Specialized in Cybersecurity and Network Security",
-        "Leading a cybersecurity club in University.",
-        "President of the CyberHunter Club.",
-        "Participated in various CTFs and Hackathons.",
-        "National level CTF Finalist (Pentathon2024)."
+        "Built strong foundation in core computer science subjects including Data Structures & Algorithms, Operating Systems, Networks, and Database Systems",
+        "Club President of CyberHunter, coordinating over 100 members and organizing practical cybersecurity training workshops",
+        "Achieved 11th position at the NCIIPC-AICTE Pentathon 2024 Grand Finale, competing among top teams nationally",
+        "Certified AppSec Practitioner (CAP) with hands-on experience in VAPT, Linux, Metasploit, Nmap, Burp Suite, and Raspberry Pi projects",
+        "Actively participate in national-level Capture the Flag (CTF) competitions to sharpen problem-solving and ethical hacking skills"
+      ]
+    },
+    {
+      degree: "Senior Secondary Education",
+      institution: "Katras College",
+      location: "Dhanbad, State Board",
+      period: "2019 - 2021",
+      grade: "Score: 63.8%",
+      highlights: [
+        "Completed higher secondary education with focus on Science stream",
+        "Developed foundational knowledge in Mathematics, Physics, and Chemistry",
+        "Participated in various academic and extracurricular activities"
+      ]
+    },
+    {
+      degree: "Secondary Education",
+      institution: "DAV+2 High School Katras",
+      location: "Dhanbad, State Board",
+      period: "2018 - 2019",
+      grade: "Score: 71.6%",
+      highlights: [
+        "Completed secondary education with strong academic performance",
+        "Built fundamental knowledge across core subjects",
+        "Demonstrated consistent academic excellence and discipline"
       ]
     }
   ];
@@ -131,7 +143,7 @@ const ResumeSection = () => {
                 {experiences.map((exp, index) => (
                   <Card 
                     key={index}
-                    className={`ml-12 md:ml-20 hover:shadow-lg transition-all duration-300 ${
+                    className={`ml-12 md:ml-20 card-gradient-hover ${
                       isVisible ? 'animate-slide-in-right' : 'opacity-0'
                     }`}
                     style={{ animationDelay: `${0.4 + (index * 0.1)}s` }}
@@ -205,7 +217,7 @@ const ResumeSection = () => {
               {education.map((edu, index) => (
                 <Card 
                   key={index}
-                  className={`hover:shadow-lg transition-all duration-300 ${
+                  className={`card-gradient-hover ${
                     isVisible ? 'animate-fade-in-scale' : 'opacity-0'
                   }`}
                   style={{ animationDelay: `${0.8 + (index * 0.1)}s` }}
@@ -250,7 +262,7 @@ const ResumeSection = () => {
 
           {/* Call to Action */}
           <div className={`text-center mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.9s' }}>
-            <Card className="bg-gradient-primary text-white">
+            <Card className="text-white card-gradient-hover" style={{background: 'linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%))'}}>
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-4">Interested in working together?</h3>
                 <p className="mb-6 opacity-90">

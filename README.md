@@ -1,38 +1,29 @@
-# 🚀 Rishu's Vivid Portfolio
+# 🚀 Rishu Kumar's Portfolio
 
-> A modern, responsive portfolio website built with cutting-edge web technologies
+> A modern, responsive, and fully static portfolio website built with React and TypeScript
 
 ## 📱 Live Demo
 
-- **Portfolio**: [rishus-vivid-folio.vercel.app](https://rishus-vivid-folio.vercel.app)
+- **Portfolio**: [https://rishuburnwal.github.io/Portfolio/](https://rishuburnwal.github.io/Portfolio/)
 
-## 🎥 Video Preview
+## 🎥 Preview
 
-<p align="center">
-  <kbd>
-<img src="https://github.com/RishuBurnwal/Portfolio/blob/main/public/Portfolio.gif"></img>
-  </kbd>
-</p>
-
-<video width="100%" controls>
-  <source src="public/Portfolio.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+![Portfolio Preview](https://github.com/RishuBurnwal/Portfolio/raw/main/public/Portfolio.gif)
 
 ## ✨ Features
 
 - 🎨 **Modern Design System** - Clean, professional UI with smooth animations
 - 🌙 **Dark/Light Mode** - Seamless theme switching with persistent preferences
 - 📱 **Fully Responsive** - Optimized for all devices and screen sizes
-- ⚡ **Performance Optimized** - Built with Vite for lightning-fast development
+- ⚡ **Performance Optimized** - Static site with Vite for lightning-fast loading
 - 🎭 **Smooth Animations** - CSS animations and transitions for engaging UX
 - 🔍 **SEO Optimized** - Meta tags and semantic HTML structure
-- 📊 **Interactive Components** - Modern UI components with shadcn/ui
+- 📧 **Contact Form** - Simple mailto form for easy communication
 - 🎯 **Accessibility** - WCAG compliant with proper ARIA labels
 
 ## 🛠️ Tech Stack
 
-### Frontend Framework
+### Frontend
 - **React 18** - Latest React with hooks and modern patterns
 - **TypeScript** - Type-safe development experience
 - **Vite** - Ultra-fast build tool and dev server
@@ -41,7 +32,7 @@
 - **Tailwind CSS** - Utility-first CSS framework
 - **shadcn/ui** - Beautiful, accessible component library
 - **CSS Custom Properties** - Dynamic theming system
-- **Framer Motion** - Smooth animations and transitions
+- **Lucide Icons** - Clean and consistent icon set
 
 ### Development Tools
 - **ESLint** - Code quality and consistency
@@ -73,7 +64,7 @@
    ```
 
 4. **Open your browser**
-   Navigate to `http://localhost:8080`
+   Navigate to `http://localhost:5176` (or the port shown in the terminal)
 
 ### Available Scripts
 
@@ -95,16 +86,17 @@ Portfolio/
 │   │   ├── HeroSection.tsx           # Hero section
 │   │   ├── SkillsSection.tsx         # Skills showcase
 │   │   ├── ProjectsSection.tsx       # Portfolio projects
-│   │   ├── AchievementsSection.tsx   # Accomplishments
+│   │   ├── AchievementsSection.tsx   # Certifications and awards
 │   │   ├── ResumeSection.tsx         # Experience & education
-│   │   ├── ContactSection.tsx        # Contact form
+│   │   ├── ContactSection.tsx        # Contact form with email
 │   │   └── Footer.tsx                # Footer component
 │   ├── pages/                        # Page components
 │   ├── hooks/                        # Custom React hooks
+│   │   ├── use-mobile.tsx            # Mobile detection hook
+│   │   └── use-toast.ts              # Toast notification hook
 │   ├── lib/                          # Utility functions
 │   └── App.tsx                       # Main application component
-├── public/                           # Static assets
-├── assets/                           # Project assets
+├── public/                           # Static assets and favicons
 └── tailwind.config.ts                # Tailwind configuration
 ```
 
@@ -115,6 +107,7 @@ Portfolio/
 - **Accent**: Electric Blue (#3b82f6)
 - **Secondary**: Purple (#8b5cf6)
 - **Neutral**: Gray scale with proper contrast ratios
+- **Dark/Light**: System preference aware theming
 
 ### Typography
 - **Font Family**: Inter (Google Fonts)
@@ -125,44 +118,48 @@ Portfolio/
 - **Navigation**: Sticky header with smooth scrolling
 - **Hero**: Animated introduction with CTA buttons
 - **Skills**: Interactive skill cards with progress indicators
-- **Projects**: Portfolio showcase with filtering
-- **Contact**: Functional contact form with validation
+- **Projects**: Portfolio showcase with modal details
+- **Contact**: Simple mailto form for easy communication
 
 ## 🌐 Deployment
 
-### Vercel (Recommended)
+### GitHub Pages (Recommended)
+1. Build the project: `npm run build`
+2. Install gh-pages: `npm install --save-dev gh-pages`
+3. Add deploy script to package.json:
+   ```json
+   "scripts": {
+     "deploy": "gh-pages -d dist"
+   }
+   ```
+4. Run `npm run build` then `npm run deploy`
+5. Enable GitHub Pages in repository settings (use gh-pages branch)
+
+### Vercel
 1. Connect your GitHub repository to Vercel
 2. Vercel auto-detects the Vite configuration
 3. Deploy with one click
-4. Get automatic deployments on every push
+4. Get automatic deployments on every push to main branch
 
 ### Netlify
 1. Drag and drop the `dist` folder
 2. Or connect your Git repository
-3. Configure build settings if needed
-4. Deploy and get a live URL
-
-### GitHub Pages
-1. Build the project: `npm run build`
-2. Push the `dist` folder to `gh-pages` branch
-3. Enable GitHub Pages in repository settings
-4. Configure custom domain if desired
+3. Set build command: `npm run build`
+4. Set publish directory: `dist`
+5. Deploy site
 
 ## 🔧 Configuration
-
-### Environment Variables
-Create a `.env.local` file for local development:
-
-```env
-VITE_API_URL=your_api_endpoint
-VITE_GA_TRACKING_ID=your_google_analytics_id
-```
 
 ### Tailwind Configuration
 Customize colors, spacing, and animations in `tailwind.config.ts`:
 
 ```typescript
 module.exports = {
+  darkMode: ["class"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -175,6 +172,9 @@ module.exports = {
   }
 }
 ```
+
+### Vite Configuration
+Customize build settings in `vite.config.ts`:
 
 ## 📱 Responsive Design
 
@@ -193,11 +193,24 @@ The portfolio is fully responsive with breakpoints:
 
 ## 🤝 Contributing
 
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- [shadcn/ui](https://ui.shadcn.com/) for beautiful components
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first CSS
+- [Vite](https://vitejs.dev/) for the amazing build tool
+- [Lucide Icons](https://lucide.dev/) for the icon set
 
 ## 📄 License
 

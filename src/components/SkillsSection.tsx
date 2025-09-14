@@ -22,62 +22,65 @@ const SkillsSection = () => {
       title: "Programming Languages",
       icon: Code,
       skills: [
-        { name: "JavaScript", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Python", level: 80 },
+        { name: "Python", level: 85 },
+        { name: "JavaScript", level: 80 },
         { name: "Java", level: 75 },
-        { name: "C++", level: 70 }
+        { name: "C", level: 70 },
+        { name: "HTML/CSS", level: 85 },
+        { name: "SQL", level: 75 }
       ]
     },
     {
-      title: "Web Development",
-      icon: Globe,
-      skills: [
-        { name: "React", level: 95 },
-        { name: "Next.js", level: 85 },
-        { name: "Node.js", level: 80 },
-        { name: "Express.js", level: 80 },
-        { name: "HTML5/CSS3", level: 90 },
-        { name: "Tailwind CSS", level: 85 }
-      ]
-    },
-    {
-      title: "Cybersecurity",
+      title: "Cybersecurity Tools",
       icon: Shield,
       skills: [
-        { name: "Network Security", level: 85 },
-        { name: "Penetration Testing", level: 80 },
-        { name: "OWASP Top 10", level: 85 },
-        { name: "Vulnerability Assessment", level: 80 },
-        { name: "Incident Response", level: 75 },
-        { name: "Risk Management", level: 70 }
+        { name: "Nmap", level: 90 },
+        { name: "Metasploit", level: 85 },
+        { name: "Burp Suite", level: 85 },
+        { name: "Wireshark", level: 80 },
+        { name: "Kali Linux", level: 85 },
+        { name: "VAPT", level: 80 }
       ]
     },
     {
-      title: "Database & Cloud",
-      icon: Database,
+      title: "Security Expertise",
+      icon: Lock,
       skills: [
-        { name: "MongoDB", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "AWS", level: 75 },
-        { name: "Docker", level: 80 },
-        { name: "Kubernetes", level: 70 },
-        { name: "Redis", level: 75 }
+        { name: "Network Security", level: 85 },
+        { name: "Threat Management", level: 80 },
+        { name: "Risk Management", level: 75 },
+        { name: "Cyber Forensics", level: 75 },
+        { name: "Bug Bounty", level: 70 },
+        { name: "SIEM", level: 70 }
+      ]
+    },
+    {
+      title: "Development & Tools",
+      icon: Globe,
+      skills: [
+        { name: "Web Development", level: 80 },
+        { name: "Git & Github", level: 85 },
+        { name: "Project Leading", level: 85 },
+        { name: "React", level: 75 },
+        { name: "Node.js", level: 70 },
+        { name: "Flask", level: 75 }
       ]
     }
   ];
 
   const tools = [
-    { name: "Git", icon: GitBranch },
-    { name: "GitHub", icon: GitBranch },
-    { name: "VS Code", icon: Terminal },
+    { name: "Nmap", icon: Bug },
+    { name: "Kali Linux", icon: Terminal },
+    { name: "Metasploit", icon: Lock },
     { name: "Wireshark", icon: Bug },
     { name: "Burp Suite", icon: Lock },
-    { name: "Postman", icon: Server },
-    { name: "Docker", icon: Server },
-    { name: "Kubernetes", icon: Server },
-    { name: "Figma", icon: Smartphone },
-    { name: "Notion", icon: Smartphone },
+    { name: "Hydra", icon: Lock },
+    { name: "Git & Github", icon: GitBranch },
+    { name: "SIEM", icon: Shield },
+    { name: "VAPT", icon: Bug },
+    { name: "Raspberry Pi", icon: Server },
+    { name: "Python Flask", icon: Server },
+    { name: "FastAPI", icon: Server },
   ];
 
   // Intersection Observer for animations
@@ -119,7 +122,7 @@ const SkillsSection = () => {
             return (
               <Card 
                 key={category.title} 
-                className={`p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 bg-card border-border ${
+                className={`p-6 bg-card border-border card-gradient-hover ${
                   isVisible ? 'animate-fade-in-scale' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${categoryIndex * 0.1}s` }}

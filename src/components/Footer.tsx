@@ -9,17 +9,17 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground py-12 relative">
+    <footer className="py-12 relative bg-background text-foreground">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           
           {/* Brand & Description */}
           <div className="space-y-4">
-            <h3 className="font-bold text-xl bg-gradient-to-r from-white to-accent-primary bg-clip-text text-transparent">
+            <h3 className="font-bold text-xl bg-gradient-to-r from-foreground to-accent-primary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-pointer">
               Rishu Kumar
             </h3>
-            <p className="text-primary-foreground/80 leading-relaxed">
+            <p className="leading-relaxed text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-default">
               Passionate developer and cybersecurity enthusiast crafting secure, 
               innovative solutions that make a difference in the digital world.
             </p>
@@ -27,7 +27,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-lg">Quick Links</h4>
+            <h4 className="font-semibold text-lg hover:text-accent-primary transition-colors duration-300 cursor-default">Quick Links</h4>
             <div className="grid grid-cols-2 gap-2">
               {[
                 { label: 'Home', id: 'home' },
@@ -43,7 +43,7 @@ const Footer = () => {
                     const element = document.getElementById(link.id);
                     if (element) element.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="text-left text-primary-foreground/80 hover:text-accent-primary transition-colors duration-300"
+                  className="text-left text-muted-foreground hover:text-accent-primary hover:translate-x-2 transition-all duration-300 hover:font-medium"
                 >
                   {link.label}
                 </button>
@@ -53,8 +53,8 @@ const Footer = () => {
 
           {/* Connect */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-lg">Let's Connect</h4>
-            <p className="text-primary-foreground/80">
+            <h4 className="font-semibold text-lg hover:text-accent-primary transition-colors duration-300 cursor-default">Let's Connect</h4>
+            <p className="text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-default">
               Ready to collaborate on your next project? 
               Let's create something amazing together!
             </p>
@@ -64,7 +64,7 @@ const Footer = () => {
                 const element = document.getElementById('contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="bg-accent-primary hover:bg-accent-primary/90 text-white border-none"
+              className="bg-accent-primary hover:bg-accent-primary/90 text-white border-none hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               Get In Touch
             </Button>
@@ -72,11 +72,11 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-primary-foreground/20 pt-8">
+        <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             
             {/* Copyright */}
-            <div className="flex items-center space-x-2 text-primary-foreground/80">
+            <div className="flex items-center space-x-2 text-muted-foreground">
               <span>© {currentYear} Rishu Kumar. All rights reserved.</span>
               <Heart className="h-4 w-4 text-red-400 animate-pulse" />
             </div>
@@ -86,7 +86,7 @@ const Footer = () => {
               variant="ghost"
               size="sm"
               onClick={scrollToTop}
-              className="text-primary-foreground hover:text-accent-primary hover:bg-accent-primary/10 transition-all duration-300"
+              className="text-foreground hover:text-accent-primary hover:bg-accent-primary/10 hover:scale-105 hover:-translate-y-1 transition-all duration-300"
             >
               <ArrowUp className="h-4 w-4 mr-2" />
               Back to Top

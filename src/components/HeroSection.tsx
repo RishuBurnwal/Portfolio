@@ -8,9 +8,11 @@ const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(true);
 
   const phrases = [
-    "Rishu Kumar",
-    "a Developer",
-    "a Cybersecurity Enthusiast"
+    "Rishu Kumar❤️",
+    "a Developer😒",
+    "a Techie😎",
+    "a Student🥲",
+    "a Cybersecurity Enthusiast😍"
   ];
 
   // Typing animation effect
@@ -48,7 +50,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-hero">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-background">
       <div className="container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
@@ -74,9 +76,9 @@ const HeroSection = () => {
 
             {/* Bio */}
             <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-              A passionate software developer and cybersecurity enthusiast dedicated to creating 
-              secure, innovative solutions. I combine technical expertise with creative problem-solving 
-              to build applications that make a difference.
+              I'm a Computer Science and Engineering student at Quantum University with a passion for cybersecurity. 
+              As Club President of CyberHunter, I coordinate 100+ members and organize practical cybersecurity training workshops. 
+              My proactive approach to learning and genuine passion for keeping computer systems secure sets me apart in this dynamic field.
             </p>
 
             {/* Action Buttons */}
@@ -103,7 +105,7 @@ const HeroSection = () => {
                 className="text-accent-primary hover:bg-accent-primary/10 transition-colors duration-300"
                 onClick={() => {
                   // Placeholder for CV download functionality
-                  window.open('/public/Myresume.pdf', '_blank');
+                  window.open('/Myresume.pdf', '_blank');
                 }}
               >
                 <Download className="mr-2 h-4 w-4" />
@@ -114,16 +116,20 @@ const HeroSection = () => {
             {/* Stats or Quick Info */}
             <div className="flex flex-wrap gap-8 pt-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-accent-primary">5+</div>
+                <div className="text-2xl font-bold text-accent-primary">6+</div>
                 <div className="text-sm text-muted-foreground">Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-accent-primary">Fresher</div>
-                <div className="text-sm text-muted-foreground">No Experience Yet</div>
+                <div className="text-2xl font-bold text-accent-primary">Top 11</div>
+                <div className="text-sm text-muted-foreground">Pentathon 2024</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-accent-primary">24+</div>
-                <div className="text-sm text-muted-foreground">Certifications</div>
+                <div className="text-2xl font-bold text-accent-primary">100+</div>
+                <div className="text-sm text-muted-foreground">Club Members</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-accent-primary">CAP</div>
+                <div className="text-sm text-muted-foreground">Certified</div>
               </div>
             </div>
           </div>
