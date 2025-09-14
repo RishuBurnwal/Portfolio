@@ -59,7 +59,7 @@ const HeroSection = () => {
             {/* Greeting */}
             <div className="space-y-4">
               <p className="text-lg text-muted-foreground font-medium">
-                Hello,
+                Hello
               </p>
               
               {/* Dynamic Typing Text */}
